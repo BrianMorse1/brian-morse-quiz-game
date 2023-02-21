@@ -1,0 +1,45 @@
+*{
+    background-color: #cccccc;
+    font-family: "Times, serif, Arial";
+    
+}
+
+/*sets basic properties for card class*/
+.card{
+    display: flexbox;
+    border-style: inset;
+    border-color:#f67124;
+    height: auto;
+    width: auto;
+    padding: 15px;
+    margin: 40px;
+    box-shadow: 5px 10px;
+    border-radius: 10px;
+    font-size:24px;
+}
+
+/*sets properties for time display*/
+#timeLeft{
+    border-style:solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-style: inset;
+    text-align: center;
+    font-size: 36px;
+    background-color: white;
+        
+}
+
+/*sets properties for timer card*/
+#timer{
+    height:auto;
+    }
+
+/*sets properties for start button*/
+#start{
+height: auto;
+width: auto;
+}
+
+
+
