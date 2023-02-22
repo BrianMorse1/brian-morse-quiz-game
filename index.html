@@ -11,8 +11,8 @@
     <!--Creates card class for site organization-->
     <div class = "card", id="timer">
    <!-- Adds a section to display the timer and number of correct answers and creates span to store time remaining--> 
-    <p>Time remaining: <span id = "timeLeft">59</span> </p>
-    <p id="correctAnswers">Correct answers: </p>
+    <p>Time remaining: <span id = "timeLeft">60</span> </p>
+    <p> Correct answers: <span id="correctAnswers">0</span></p>
     <!-- Creates a button to present the first question and start the time-->
     <button id="start">Start</button>
     </div>
@@ -25,9 +25,10 @@
     <!--Creates a display area for possible answers -->
     <div class ="card", id="answers">
         <p id="choices">Type answer here: </p>
+        <p id="currentAnswer"></p>
         <form>
-        <input type="text", id="userAnswer">
-        <button id="submit">Submit</button>
+        <input type="text" id="userAnswer">
+        <button id="submit" type="button">Submit</button>
     </form>
     </div>
 
