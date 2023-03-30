@@ -5,35 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
-    <title>Quiz Game</title>
-   </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>JavaScript quiz!</title>
+</head>
 <body>
-    <!--Creates card class for site organization-->
-    <div class = "card", id="timer">
-   <!-- Adds a section to display the timer and number of correct answers and creates span to store time remaining--> 
-    <p>Time remaining: <span id = "timeLeft">60</span> </p>
-    <p> Correct answers: <span id="correctAnswers">0</span></p>
-    <!-- Creates a button to present the first question and start the time-->
-    <button id="start">Start</button>
+    <!-- div for timer and correct answers-->
+    <div class="card" id="timer">
+        <p>Time remaining: <span id="timeLeft">60</span></p>
+        <p>Correct answers: <span id="correctAnswers">0</span> </p>
+        <button id="start">Start</button>
     </div>
 
-    <!--Creates a display area for the question-->
-    <div class ="card", id="display">
-    <p id="question">Your Question:</p>
-    </div>
-
-    <!--Creates a display area for possible answers -->
-    <div class ="card", id="answers">
-        <p id="choices">Type answer here: </p>
-        <p id="currentAnswer"></p>
-        <form>
-        <input type="text" id="userAnswer">
-        <button id="submit" type="button">Submit</button>
-    </form>
+    <!-- div to display questions-->
+    <div class="card" id="display">
+        <p id="question"></p>
+        <p id="choices"></p>    
     </div>
 
 
-<!-- add javascript-->
-<script src="java.js"> </script>
 </body>
+<script src="java.js"></script>
+
 </html>

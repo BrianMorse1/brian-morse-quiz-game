@@ -1,93 +1,43 @@
-// set variable to store time remaining
-var timeLeft = 60;
-var currentAnswer = "";
+// variables for time and correct answers
+let timeLeft = parseInt(document.getElementById('timeLeft').innerHTML);
+let correctAnswers = parseInt(document.getElementById('correctAnswers').innerHTML);
+let currentAnswer;
 
- //Adds score to local storage
- var playerName = prompt("What are your initials?");
+// array containing the quiz questions, the first index of each question array is the question, the second is an array containing the possible answers, and the third is the index of the correct answer within the possible answers array.
+const questions = [  ["What type of file contains javascript code?", [".css", ".js", ".html", ".txt"], 1],
+  ["How do you declare the variable 'shoes' in javascript?", ["let shoes =", "dec shoes =", "this shoes =", "shoes ="], 0],
+  ["What unit of time does the 'setInterval' command use?", ["seconds", "milliseconds", "minutes", "hours"], 1],
+  ["True or False, the javascript file can be linked in the head or the body of html?", ["True", "False"], 0],
+  ["True or False, javascript can automatically use Jquerry functions?", ["True", "False"], 1],
+];
 
-//variables to use to adjust score and check user answers
-var score = parseInt(document.getElementById("correctAnswers").value);
-var check = document.getElementById("userAnswer");
+//function to select current question, generate choices, and identify correct answer
+function selectQuestion() {
+    let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+    let nextQuestion = randomQuestion[0];
+    let choices = randomQuestion[1];
+    let correctChoice = randomQuestion[2];
 
- function highScore(){
- localStorage.setItem(playerName, score)
- };
+    //displays current question
+        document.getElementById('question').innerHTML = nextQuestion;
 
-//create varible to store function for determining timeLeft
-function countDown() { setInterval(function(){
-    //gives instruction for when timeLeft passes 0 and clears the interval from setInterval
-    if(timeLeft < 0){
-        document.getElementById("timeLeft").innerHTML = "Time is up!!";
-        clearInterval(countDown);
-        highScore();
-        
-    } else {
-        timeLeft--;
-        document.getElementById("timeLeft").innerHTML = timeLeft ;
-    }
+    //generates choices 
+    let choiceElements ='';
+    for (var i = 0; i < choices.length; i++) {
+        choiceElements += "<input type='radio' name='choice' value='" + i + "'>" + choices[i] +"<br>";
     
-}, 1000);
-};
-document.getElementById("start").addEventListener("click", countDown);
-document.getElementById("start").addEventListener("click", currentQuestion);
 
+    document.getElementById('choices').innerHTML = choiceElements;
 
-//create pool of questions to display
+    //identifies correct choice
+    currentAnswer = correctChoice;
+}}
 
-    var questions = [
-        ["What type of file contains javascript code?", ".css"],
-        ["How do you declare the variable 'shoes' in javascript?", "var shoes ="],
-        ["What unit of time does the 'setInterval' command use?", "milliseconds"],
-        ["True or False, the javascript file can be linked in the head or the body of html?", "True"],
-        ["True or False, javascript can automatically use Jquerry functions?", "False"],
-    ];
-
-
-    
-//create function to select random question
-function currentQuestion(){
-    var randomQuestion = questions[Math.floor(Math.random() * questions.length)]
-
-    var nextQuestions = randomQuestion[0]
-    var nextAnswer = randomQuestion[1]
-    
-document.getElementById("currentAnswer").innerHTML = nextAnswer;   
-currentAnswer = nextAnswer;
-document.getElementById("question").innerHTML = nextQuestions;
-}
-
-//create function to adjust score
-  function adjustScore(){
-        document.getElementById("correctAnswers").innerHTML = num.toString(score + 1);
-    }
+//checks for correct answer
+function checkAnswer() {
+    let correct = document.getElementsByName('choice')[currentAnswer];
+    let correctChoice = document.getElementById('choices').getElementsByTagName('input')[currentAnswer];
+    let correctAnswer = correctChoice.value;
+    let correctAnswerText = correctChoice.innerHTML;
 
    
-
-//create function to check for correct answer
-
-
-function checkAnswer(event){
-    event.preventDefault();
-    console.log(check.value);
-  document.getElementById("currentAnswer").value
-    if(
-   check.value == currentAnswer){
-        adjustScore();
-        
-}
-    else {
-       timeLeft = timeLeft - 5 ;
-
-        }
-        
-    }
-
-
-
-//add event listener and code for submit button
-document.getElementById("submit").addEventListener("click", checkAnswer);
-
-
-
-
-
