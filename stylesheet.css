@@ -1,14 +1,41 @@
+/* Color Pallete: #333333, #64B6AC, #A57982, #CE7B91, #F4F2F3 */
+/*More options: #3A4E48 (Turquise), #CEE7E6 (white), #613F75 (purple), #BFB5AF (tide), #122932 (Black Pearl), #2C514C,  */
 *{
-    background-color: #cccccc;
+    background-color: #CEE7E6;
     font-family: "Times, serif, Arial";
     
+}
+#question, 
+#highScores, 
+#choices,
+#highscoresTable, 
+#correctAnswers{
+background-color: #BFB5AF;
+}
+
+p,
+h1,
+h2,
+thead,
+tbody,
+th,
+td{
+    color: #122932;
+    background-color: #BFB5AF;
+    border-color: #3A4E48;  
+}
+
+table{
+    border-radius: 5px;
+    color: #122932;
 }
 
 /*sets basic properties for card class*/
 .card{
+    background-color: #BFB5AF;
     display: flexbox;
     border-style: inset;
-    border-color:#f67124;
+    border-color:#3A4E48;
     height: auto;
     width: auto;
     padding: 15px;
@@ -26,23 +53,38 @@
     border-style: inset;
     text-align: center;
     font-size: 36px;
-    background-color: white;
+    background-color: #CEE7E6;
         
+}
+
+#title{
+    color: #122932;
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #CEE7E6;
 }
 
 /*sets properties for timer card*/
 #timer{
+    background-color: #BFB5AF;
     height:auto;
+    color: #122932;
     }
 
-/*sets properties for start button*/
+/*sets properties for start and submit button*/
 #start{
-height: auto;
-width: auto;
+background-color: #CEE7E6;
+color: #122932;
+height: 30px;
+width: 50px;
+border-radius: 5px;
 }
 
-/*hides paragraph where answer is stored*/
-#currentAnswer{
-    display: none;
+#submit{
+    background-color: #CEE7E6;
+color: #122932;
+height: 30px;
+width: 70px;
+border-radius: 5px;
 }
-
