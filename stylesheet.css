@@ -28,6 +28,7 @@ td{
 table{
     border-radius: 5px;
     color: #122932;
+    border-style: inset;
 }
 
 /*sets basic properties for card class*/
