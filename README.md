@@ -1,19 +1,36 @@
-# brian-morse-quiz-game
 
-## User Story
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
+# Javascript Quiz ![](https://img.shields.io/badge/License:-MIT-lightgrey)
+        
+## Description
+This is a quiz game designed to drill javascript concepts. It collects a high score and stores it in local storage so a list of top scores can be discplayed. 
 
-### Acceptance Criteria
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
+## Table of Contents
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [Contribution](#contribution)
+
+* [Test](#test)
+
+* [License](#license)
+
+    
+## Installation
+Visit launched ap at: https://brianmorse1.github.io/brian-morse-quiz-game/
+
+## Usage
+This project is intended to be used to study Javascript concepts by student programmers. 
+
+## Test
+No test criteria are necessary for this project.
+
+## Contribution
+No contributions are being accepted. 
+
+## License
+This project uses the MIT license. 
+[MIT](./LICENSE)
+
+## Questions
+For any quesitions regarding this project, please see my Github at https://github.com/BrianMorse1 or email me at Brian.P.Morse@gmail.com. 
