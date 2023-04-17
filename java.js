@@ -7,14 +7,14 @@ let correctChoice;
 const startButton = document.getElementById('start');
 const submitButton = document.getElementById('submit');
 let initials;
-const highScores = JSON.parse(localStorage.getItem('highScores')) || ['BM', 0];
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [{initials: 'BM', correctAnswers: '0'}];
 
 //pushes an empty array to local storage on load if one doesn't exist
 window.addEventListener('load', function(){
     if (localStorage.getItem('highScores')) {
         console.log('High scores table exists')
     } else{
-        localStorage.setItem('highScores', JSON.stringify(['BM', 0]))
+        localStorage.setItem('highScores', JSON.stringify([{initials: 'BM', correctAnswers: '0'}]))
     }
 });
 
@@ -71,7 +71,7 @@ function checkAnswer() {
         timeLeft -= 5;
     }
     selectQuestion();
-}
+};
 
 //event listener for start button and function for timer
 document.getElementById('start').addEventListener('click', function() {
