@@ -91,7 +91,7 @@ document.getElementById('start').addEventListener('click', function() {
 const displayHighScores = () => {
   const highScores = JSON.parse(localStorage.getItem('highScores'));
   // sorts highScores
-  if (highScores) {
+  if (highScores.length >= 10) {
     highScores.sort((a, b) => b.correctAnswers - a.correctAnswers);
 
     // loops through high scores and displays the top 10
@@ -110,7 +110,20 @@ const displayHighScores = () => {
       tBody.appendChild(row);
     }
     highScoresTable.appendChild(tBody);
-  };
+  } else {
+    for (let i = 0; i <= highScores.length; i++) {
+        const row = document.createElement('tr');
+        const initials = document.createElement('td');
+        initials.textContent = highScores[i].initials;
+        const scoreCell = document.createElement('td');
+        scoreCell.textContent = highScores[i].correctAnswers;
+        row.appendChild(initials);
+        row.appendChild(scoreCell);
+        tBody.appendChild(row);
+      }
+      highScoresTable.appendChild(tBody);
+  }
+  ;
 };
 
 displayHighScores();
